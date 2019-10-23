@@ -29,7 +29,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;poster_asset_folder.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;blog_with_photo.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;photo_in_blog.png">
-<meta property="og:updated_time" content="2019-10-23T01:18:59.634Z">
+<meta property="og:updated_time" content="2019-10-23T08:38:23.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;start.png">
   
@@ -108,7 +108,6 @@
         <h1 id="通过Hexo建立个人博客站点"><a href="#通过Hexo建立个人博客站点" class="headerlink" title="通过Hexo建立个人博客站点"></a>通过<em>Hexo</em>建立个人博客站点</h1><h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <p><img src="/2019/10/22/hexo/start.png" alt></p>
 <a id="more"></a>
-
 <h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
 <ul>
 <li><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a> (Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本)</li>
@@ -197,12 +196,16 @@
 
 <p>引入图片后的效果如下图：</p>
 <p><img src="/2019/10/22/hexo/photo_in_blog.png" alt></p>
+<h3 id="关于md文件插入本地图片在GitHub-Pages无法显示的问题说明"><a href="#关于md文件插入本地图片在GitHub-Pages无法显示的问题说明" class="headerlink" title="关于md文件插入本地图片在GitHub Pages无法显示的问题说明"></a>关于md文件插入本地图片在GitHub Pages无法显示的问题说明</h3><p>由于hexo3版本后对很多插件支持有问题，hexo-asset-image插件在处理data.permalink链接时出现路径错误，把年月去掉了，导致最后生成的路径为%d/xxx/xxx需要对其做兼容处理。通过判断当前版本是否等于3的版本做不同的路径分割。因此，这里提供一个已经修复这个bug的插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>之后重新编译发布即可。然后刷新浏览器即可！</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck22lg4j40000hhxube7h0iki" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
+        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck22pixyi0000j0xu5xgkem1b" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
       
 
       
