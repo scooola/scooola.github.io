@@ -6,15 +6,15 @@
   
   <title>LeetCode | scola的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode[TOC]">
+  <meta name="description" content="LeetCode1.两数之和给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode">
 <meta property="og:url" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;11&#x2F;06&#x2F;LeetCode&#x2F;index.html">
 <meta property="og:site_name" content="scola的博客">
-<meta property="og:description" content="LeetCode[TOC]">
+<meta property="og:description" content="LeetCode1.两数之和给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-06T10:00:05.874Z">
+<meta property="og:updated_time" content="2019-11-06T10:02:41.938Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="scola的博客" type="application/atom+xml">
@@ -89,14 +89,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p>[TOC]</p>
-<a id="more"></a>
-
-<h3 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+        <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><h3 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 <p>示例:</p>
 <p>给定 nums = [2, 7, 11, 15], target = 9</p>
 <p>因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]</p>
+<a id="more"></a>
+
 <p>执行用时 :64 ms, 在所有 python3 提交中击败了93.62%的用户<br>        内存消耗 :15.5 MB, 在所有 python3 提交中击败了5.05%的用户</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        num_dict = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> index, value <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            num_dict[value] = index</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> index, value <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            v = num_dict.get(target-value)</span><br><span class="line">            <span class="keyword">if</span> v <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> v != index:</span><br><span class="line">                <span class="keyword">return</span>[index, v]</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">s = Solution()</span><br><span class="line">nums = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">target = <span class="number">6</span></span><br><span class="line">print(s.twoSum(nums, target))</span><br></pre></td></tr></table></figure>
 
@@ -203,7 +202,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://139.180.173.25/2019/11/06/LeetCode/" data-id="ck2n42my30000rexu6t4023co" class="article-share-link" data-share="baidu" data-title="LeetCode">Share</a>
+        <a data-url="http://139.180.173.25/2019/11/06/LeetCode/" data-id="ck2n4638s0000wfxu2w4u7eui" class="article-share-link" data-share="baidu" data-title="LeetCode">Share</a>
       
 
       
