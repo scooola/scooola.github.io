@@ -29,7 +29,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;poster_asset_folder.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;blog_with_photo.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;photo_in_blog.png">
-<meta property="og:updated_time" content="2019-10-23T08:38:23.097Z">
+<meta property="og:updated_time" content="2019-11-07T09:38:59.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;start.png">
   
@@ -202,12 +202,83 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
 <p>之后重新编译发布即可。然后刷新浏览器即可！</p>
+<h4><span id="hexo-bo-ke-qian-yi">hexo博客迁移</span></h4><h2><span id="bei-fen-yuan-wen-jian">备份原文件</span></h2><p>需要转移的文件有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">文件(夹)</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">scaffolds/</td>
+<td align="left">博客文章模板</td>
+</tr>
+<tr>
+<td align="left">source/</td>
+<td align="left">所有的博客文章</td>
+</tr>
+<tr>
+<td align="left">themes/</td>
+<td align="left">网站主题</td>
+</tr>
+<tr>
+<td align="left">.gitignore</td>
+<td align="left">push时需忽略的文件</td>
+</tr>
+<tr>
+<td align="left">_config.yml</td>
+<td align="left">站点配置文件</td>
+</tr>
+<tr>
+<td align="left">package.json</td>
+<td align="left">依赖包的名称和版本号</td>
+</tr>
+</tbody></table>
+<p>由于配置文件和主题文件需要经常更改，采用github创建博客分支的方式进行备份。</p>
+<h2><span id="chuang-jian-fen-zhi">创建分支</span></h2><p>克隆github上上生成的静态文件到hexo文件夹中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/yourname/xxxx.github.io.git hexo</span><br></pre></td></tr></table></figure>
+
+<p>克隆后将除.git文件外其他所有文件删除。主要是为了得到版本管理文件夹.git。</p>
+<p><strong>.git文件为隐藏文件，可直接将可见文件全部删除</strong></p>
+<p>将备份的原文件复制到此文件夹。若文件夹是从github克隆，则需要删除主题文件中的版本控制文件夹,以next主题为例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> rm -rf thems/next/.git*</span></span><br></pre></td></tr></table></figure>
+
+<p>创建名为hexo的分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git checkout -b hexo</span></span><br></pre></td></tr></table></figure>
+
+<p>保存所有文件到暂存区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add --all</span></span><br></pre></td></tr></table></figure>
+
+<p>提交变更</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"hexo服务备份"</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>迁移</strong></p>
+<p>以后在其他电脑上写博客，直接将分支克隆下来。再使用npm install安装依赖。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> -b hexo https://github.com/yourname/xxx.github.io.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="hexo-sheng-cheng-wen-zhang-mu-lu-gai-fang-fa-jin-zhi-chi-mo-ren-zhu-ti">hexo生成文章目录-该方法仅支持默认主题</span></h3><p>Hexo博客系统的核心支持生成目录（Table of Contents），但其默认的主题Landscape并不支持目录的显示。我们只需对Landscape的主题文件稍作修改并添加一点目录的CSS就可以在文章前面显示友好的目录了。</p>
+<h4><span id="xiu-gai-landscape-zhu-ti-de-ejs-wen-jian">修改Landscape主题的ejs文件</span></h4><p>我们首先要编辑文章显示页面的模板，也就是<code>themes/landscape/layout/_partial/article.ejs</code>文件。为了将目录生成在正文之前，我们首先在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在<strong>这一行之前</strong>加入如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">Table</span> <span class="selector-tag">of</span> <span class="selector-tag">Contents</span> <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</span><br><span class="line">  &lt;div id="toc" class="toc-article"&gt;</span><br><span class="line">    &lt;strong class="toc-title"&gt;文章目录&lt;/strong&gt;</span><br><span class="line">    &lt;%<span class="selector-tag">-</span> <span class="selector-tag">toc</span>(<span class="selector-tag">post</span><span class="selector-class">.content</span>), &#123;<span class="attribute">list_number</span>: false&#125; %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中list_number:false表示不显示序号，如果你想要打开可以设置为true</p>
+<p>这段代码的含义清晰明了，<code>if</code>语句中有两个条件，<code>!index</code>是为了不在首页的文章摘要中生成目录，<code>post.toc</code>确保了只在显式地标记了<code>toc: true</code>的文章中生成目录。若这两个条件满足，则创建一个目录的``。</p>
+<p>修改完这个文件之后，找一篇包含了多个子标题的文章，并在文章开头的front-matter中添加一句<code>toc: true</code>，在浏览器中访问这篇文章，应该可以看到文章的开头处已经有了带链接的目录。但是这样的目录实在太难看，我们还需要添加相应的CSS来将其指定为我们想要的样式。</p>
+<h4><span id="wei-mu-lu-bian-xie-css-wen-jian">为目录编写CSS文件</span></h4><p>要指定目录的样式，我们要修改的文件是<code>themes/landscape/source/css/_partial/article.styl</code>。在文件的最后，添加如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*toc*/</span></span><br><span class="line"><span class="selector-class">.toc-article</span></span><br><span class="line">  <span class="selector-tag">background</span> <span class="selector-id">#eee</span></span><br><span class="line">  <span class="selector-tag">border</span> 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#bbb</span></span><br><span class="line">  <span class="selector-tag">border-radius</span> 10<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">margin</span> 1<span class="selector-class">.5em</span> 0 0<span class="selector-class">.3em</span> 1<span class="selector-class">.5em</span></span><br><span class="line">  <span class="selector-tag">padding</span> 1<span class="selector-class">.2em</span> 1<span class="selector-tag">em</span> 0 1<span class="selector-tag">em</span></span><br><span class="line">  <span class="selector-tag">max-width</span> 28%</span><br><span class="line"><span class="selector-class">.toc-title</span></span><br><span class="line">  <span class="selector-tag">font-size</span> 120%</span><br><span class="line"><span class="selector-id">#toc</span></span><br><span class="line">  <span class="selector-tag">line-height</span> 1<span class="selector-tag">em</span></span><br><span class="line">  <span class="selector-tag">font-size</span> 0<span class="selector-class">.9em</span></span><br><span class="line">  <span class="selector-tag">float</span> <span class="selector-tag">right</span></span><br><span class="line">  <span class="selector-class">.toc</span></span><br><span class="line">    <span class="selector-tag">padding</span> 0</span><br><span class="line">    <span class="selector-tag">margin</span> 1<span class="selector-tag">em</span></span><br><span class="line">    <span class="selector-tag">line-height</span> 1<span class="selector-class">.8em</span></span><br><span class="line">    <span class="selector-tag">li</span></span><br><span class="line">      <span class="selector-tag">list-style-type</span> <span class="selector-tag">none</span></span><br><span class="line">  <span class="selector-class">.toc-child</span> </span><br><span class="line">    <span class="selector-tag">margin-left</span> 1<span class="selector-tag">em</span></span><br></pre></td></tr></table></figure>
+
+<p>第一段的<code>toc-article</code>指定了目录整个``的背景色、边框色、倒角半径、各种间距以及最大的宽度。注意这里最好指定目录的最大宽度，我将其设为了<code>28%</code>，也就是文章正文那个框的宽度的<code>28%</code>，也可以设为一个固定的长度，比如在笔记本电脑上<code>16em</code>就是个不错的宽度，但为了能适配各种不同尺寸的屏幕，最好还是设置为百分比。如果不指定最大宽度，遇到比较长的标题时，生成的目录会非常难看。这个最大宽度的设置是我在网上其他添加目录的方法中没有见到的。</p>
+<p>第二段的<code>toc-title</code>指的就是“文章目录”那四个字，这四个字要比其他字大一些，将其字号设为其他字的<code>120%</code>。</p>
+<p>第三段的<code>#toc.toc</code>指定了目录列表的一些细节，将<code>font-size</code>设为<code>0.9em</code>会让目录的字比文章的字稍小一些。最后的<code>.toc-child</code>指定了二级目录的缩进量。</p>
+<p>再次生成页面，应该已经可以显示比较美观的目录了。</p>
+<h4><span id="shou-wei-gong-zuo">收尾工作</span></h4><p>通常情况下我们不需要为每一篇文章都添加目录，因为大部分文章的长度还是相对较短，或者结构简单而没有添加小标题。在我的博客上，需要添加目录的长文还是相对较少的。因为我选择了默认不生成目录，而手动为需要目录的文章添加显式地标记。</p>
+<p>下面我就需要编辑每一篇需要添加目录的文章，在文章开头的front-matter中加入<code>toc: true</code>。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck2og6omt0001jdxu7a5u7995" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
+        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck2on96d00001agxu8g4ldqs6" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
       
 
       

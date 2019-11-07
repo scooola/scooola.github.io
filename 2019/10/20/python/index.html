@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="scola的博客">
 <meta property="og:description" content="Python学习Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。  本文主要记录了在学习python过程中所遇到的一些小知识点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T08:26:56.284Z">
+<meta property="og:updated_time" content="2019-11-07T09:29:57.551Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="scola的博客" type="application/atom+xml">
@@ -91,38 +91,14 @@
       
 		<!-- Table of Contents -->
 		
+  		  <div id="toc" class="toc-article">
+   		    <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">Python学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.1.</span> <span class="toc-text">1.__str__ 和__repr__区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.2.</span> <span class="toc-text">2.__init__和__new__关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.3.</span> <span class="toc-text">3.python字典赋值新姿势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.4.</span> <span class="toc-text">4.格式化字符时多使用format函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.5.</span> <span class="toc-text">5.使用enumerate代替for循环中的index变量访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.6.</span> <span class="toc-text">6.避免使用可变(mutable)变量作为函数参数的默认初始化值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.7.</span> <span class="toc-text">7.is 和 == 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.7.1.</span> <span class="toc-text">哪些情况下is和==结果是完全相同的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.7.2.</span> <span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.8.</span> <span class="toc-text">8.了解bytes、str与unicode的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.9.</span> <span class="toc-text">9.python 星号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.10.</span> <span class="toc-text">Keyword-Only Arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.11.</span> <span class="toc-text">10.描述器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.12.</span> <span class="toc-text">11.Unicode码转中文输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.13.</span> <span class="toc-text">12.将python对象保存到.bin文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.14.</span> <span class="toc-text">13.python2和python3同时安装导致python3的pip报错解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.15.</span> <span class="toc-text">14.virtualenv 分别创建Python2和Python3的虚拟空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.16.</span> <span class="toc-text">15.windows pip安装第三方包报错</span></a></li></ol></li></ol>[object Object]
+          </div>
+        
         <h1><span id="python-xue-xi">Python学习</span></h1><p>Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。 </p>
 <p>本文主要记录了在学习python过程中所遇到的一些小知识点。</p>
 <a id="more"></a>
-<div class="toc">
-
-<!-- toc -->
-
-<ul>
-<li><a href="#1-str-he-repr-qu-bie">1.<code>__str__</code> 和<code>__repr__</code>区别</a></li>
-<li><a href="#2-init-he-new-guan-xi">2.<code>__init__</code>和<code>__new__</code>关系</a></li>
-<li><a href="#3-python-zi-dian-fu-zhi-xin-zi-shi">3.python字典赋值新姿势</a></li>
-<li><a href="#4-ge-shi-hua-zi-fu-shi-duo-shi-yong-format-han-shu">4.格式化字符时多使用format函数</a></li>
-<li><a href="#5-shi-yong-enumerate-dai-ti-for-xun-huan-zhong-de-index-bian-liang-fang-wen">5.使用enumerate代替for循环中的index变量访问</a></li>
-<li><a href="#6-bi-mian-shi-yong-ke-bian-mutable-bian-liang-zuo-wei-han-shu-can-shu-de-mo-ren-chu-shi-hua-zhi">6.避免使用可变(mutable)变量作为函数参数的默认初始化值</a></li>
-<li><a href="#7-is-he-de-qu-bie">7.is 和 == 的区别</a><ul>
-<li><a href="#na-xie-qing-kuang-xia-is-he-jie-guo-shi-wan-quan-xiang-tong-de">哪些情况下is和==结果是完全相同的</a></li>
-<li><a href="#jie-lun">结论</a></li>
-</ul>
-</li>
-<li><a href="#8-liao-jie-bytes-str-yu-unicode-de-qu-bie">8.了解bytes、str与unicode的区别</a></li>
-<li><a href="#9-python-xing-hao">9.python 星号</a></li>
-<li><a href="#keyword-only-arguments">Keyword-Only Arguments</a></li>
-<li><a href="#10-miao-shu-qi">10.描述器</a></li>
-<li><a href="#11-unicode-ma-zhuan-zhong-wen-shu-chu">11.Unicode码转中文输出</a></li>
-<li><a href="#12-jiang-python-dui-xiang-bao-cun-dao-bin-wen-jian">12.将python对象保存到.bin文件</a></li>
-<li><a href="#13-python2-he-python3-tong-shi-an-zhuang-dao-zhi-python3-de-pip-bao-cuo-jie-jue">13.python2和python3同时安装导致python3的pip报错解决</a></li>
-<li><a href="#14-virtualenv-fen-bie-chuang-jian-python2-he-python3-de-xu-ni-kong-jian">14.virtualenv 分别创建Python2和Python3的虚拟空间</a></li>
-<li><a href="#15-windows-pip-an-zhuang-di-san-fang-bao-bao-cuo">15.windows pip安装第三方包报错</a></li>
-</ul>
-<!-- tocstop -->
-
-</div>
 
 <h2><span id="1-str-he-repr-qu-bie">1.<code>__str__</code> 和<code>__repr__</code>区别</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># __str__ 和 __repr__ 区别</span></span><br></pre></td></tr></table></figure>
 
@@ -279,7 +255,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://139.180.173.25/2019/10/20/python/" data-id="ck2og6omz0003jdxugh9lg5m2" class="article-share-link" data-share="baidu" data-title="python学习笔记">Share</a>
+        <a data-url="http://139.180.173.25/2019/10/20/python/" data-id="ck2on96d70003agxuh8ild9il" class="article-share-link" data-share="baidu" data-title="python学习笔记">Share</a>
       
 
       
