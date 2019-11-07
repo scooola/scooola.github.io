@@ -306,14 +306,20 @@ Hexo博客系统的核心支持生成目录（Table of Contents），但其默�
 <% if (!index && post.toc){ %>
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <%- toc(post.content) %>
+    <%- toc(post.content), {list_number: false} %>
   </div>
 <% } %>
 ```
 
-这段代码的含义清晰明了，`if`语句中有两个条件，`!index`是为了不在首页的文章摘要中生成目录，`post.toc`确保了只在显式地标记了`toc: true`的文章中生成目录。若这两个条件满足，则创建一个目录的``。
+其中list_number:false表示不显示序号，如果你想要打开可以设置为true
 
 修改完这个文件之后，找一篇包含了多个子标题的文章，并在文章开头的front-matter中添加一句`toc: true`，在浏览器中访问这篇文章，应该可以看到文章的开头处已经有了带链接的目录。但是这样的目录实在太难看，我们还需要添加相应的CSS来将其指定为我们想要的样式。
+
+**踩坑**：若目录不能跳转，则可能安装了hexo-toc 这个插件导致的 ，所以卸载掉重新发布就好。
+
+```shell
+npm remove hexo-toc --save
+```
 
 #### 为目录编写CSS文件
 
