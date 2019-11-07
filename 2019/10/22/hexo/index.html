@@ -107,38 +107,38 @@
       
 		<!-- Table of Contents -->
 		
-        <h1 id="通过Hexo建立个人博客站点"><a href="#通过Hexo建立个人博客站点" class="headerlink" title="通过Hexo建立个人博客站点"></a>通过<em>Hexo</em>建立个人博客站点</h1><h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+        <h1><span id="tong-guo-hexo-jian-li-ge-ren-bo-ke-zhan-dian">通过<em>Hexo</em>建立个人博客站点</span></h1><h2><span id="shi-me-shi-hexo">什么是 Hexo？</span></h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <p><img src="/2019/10/22/hexo/start.png" alt></p>
 <a id="more"></a>
-<h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+<h3><span id="an-zhuang-qian-ti">安装前提</span></h3><p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
 <ul>
 <li><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a> (Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本)</li>
 <li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
 </ul>
-<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="1-git基础安装"><a href="#1-git基础安装" class="headerlink" title="1.git基础安装"></a>1.git基础安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git gcc gcc-c++ curl wget</span><br></pre></td></tr></table></figure>
+<h3><span id="an-zhuang-bu-zou">安装步骤</span></h3><h4><span id="1-git-ji-chu-an-zhuang">1.git基础安装</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git gcc gcc-c++ curl wget</span><br></pre></td></tr></table></figure>
 
 <p>为什么要首先要安装 git？</p>
 <p>因为 Hexo 开源且基于 Node.js 环境，所以大量主题和设置需要通过 git 完成。 </p>
-<h4 id="2-安装-Node-js"><a href="#2-安装-Node-js" class="headerlink" title="2.安装 Node.js"></a>2.安装 Node.js</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/cnpm/nvm.git</span><br><span class="line">cd nvm</span><br><span class="line">sh ./install.sh</span><br><span class="line">source $HOME/nvm/nvm.sh</span><br></pre></td></tr></table></figure>
+<h4><span id="2-an-zhuang-node-js">2.安装 Node.js</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/cnpm/nvm.git</span><br><span class="line">cd nvm</span><br><span class="line">sh ./install.sh</span><br><span class="line">source $HOME/nvm/nvm.sh</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install v0.10.32 &amp;&amp; nvm use 0.10</span><br></pre></td></tr></table></figure>
 
-<h4 id="踩坑！！"><a href="#踩坑！！" class="headerlink" title="踩坑！！"></a>踩坑！！</h4><p>nodejs版本过低，会导后面的安装步骤报错。</p>
+<h4><span id="cai-keng">踩坑！！</span></h4><p>nodejs版本过低，会导后面的安装步骤报错。</p>
 <p>解决办法：升级nodejs，建议使用 <strong>Node.js 10.0 及以上</strong>版本 。</p>
 <p>升级nodejs教程如下：</p>
 <p><a href="https://segmentfault.com/a/1190000015302680" target="_blank" rel="noopener">在centos7安装nodejs并升级nodejs到最新版本</a> </p>
-<h4 id="3-部署Hexo"><a href="#3-部署Hexo" class="headerlink" title="3.部署Hexo"></a>3.部署Hexo</h4><p><strong>安装Hexo</strong></p>
+<h4><span id="3-bu-shu-hexo">3.部署Hexo</span></h4><p><strong>安装Hexo</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo --save</span><br></pre></td></tr></table></figure>
 
 <p><strong>初始化Hexo</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/wwwroot &amp;&amp; hexo init /home/wwwroot</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-列举几个常用配置"><a href="#4-列举几个常用配置" class="headerlink" title="4.列举几个常用配置"></a>4.列举几个常用配置</h4><p>配置文件_config.yml就在上一步初始化所填写的路径内。</p>
+<h4><span id="4-lie-ju-ji-ge-chang-yong-pei-zhi">4.列举几个常用配置</span></h4><p>配置文件_config.yml就在上一步初始化所填写的路径内。</p>
 <p><img src="/2019/10/22/hexo/config.png" alt></p>
 <p><img src="/2019/10/22/hexo/configfile.png" alt></p>
 <p>时区列表可参考该网页：<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a></p>
-<h4 id="坑！！注意！！！"><a href="#坑！！注意！！！" class="headerlink" title="坑！！注意！！！"></a>坑！！注意！！！</h4><p>在填写配置表时，<strong>’ : ‘</strong> 后面要紧跟一个空格再写具体配置，否则在启动Hexo的时候会报错！</p>
-<h4 id="5-启动Hexo"><a href="#5-启动Hexo" class="headerlink" title="5.启动Hexo"></a>5.启动Hexo</h4><p>完成上面简单的几部，我们的私人博客已经建好了。下面启动查看。启动后我们可以访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看，发现已经有一篇默认的博客。</p>
+<h4><span id="keng-zhu-yi">坑！！注意！！！</span></h4><p>在填写配置表时，<strong>’ : ‘</strong> 后面要紧跟一个空格再写具体配置，否则在启动Hexo的时候会报错！</p>
+<h4><span id="5-qi-dong-hexo">5.启动Hexo</span></h4><p>完成上面简单的几部，我们的私人博客已经建好了。下面启动查看。启动后我们可以访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看，发现已经有一篇默认的博客。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server 或 hexo s</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2019/10/22/hexo/default_html.png" alt></p>
@@ -154,9 +154,9 @@
 <p><img src="/2019/10/22/hexo/themes_config.png" alt></p>
 <p><strong>替换后效果：</strong></p>
 <p><img src="/2019/10/22/hexo/myblog.png" alt></p>
-<h3 id="好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！"><a href="#好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！" class="headerlink" title="好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！"></a>好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！</h3><p>如果你有云服务器，你把这一切部署在你的服务器上，别人就可以访问了。但是，如果你<strong>没钱买服务器</strong>，Hexo也为你们考虑到了！</p>
+<h3><span id="hao-liao-hua-li-hu-shao-de-dong-xi-jiang-wan-liao-wo-men-de-wang-ye-huan-shi-zai-ben-di-pao-zhe-ke-tai-low-liao">好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！</span></h3><p>如果你有云服务器，你把这一切部署在你的服务器上，别人就可以访问了。但是，如果你<strong>没钱买服务器</strong>，Hexo也为你们考虑到了！</p>
 <p><img src="/2019/10/22/hexo/nomoney.jpg" alt></p>
-<h3 id="我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）"><a href="#我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）" class="headerlink" title="我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）"></a>我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）</h3><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>登录你的Github帐号，新建仓库，命名为<strong>用户名.github.io</strong>固定写法，如scooola.github.io即下图中所示：</p>
+<h3><span id="wo-men-ke-yi-ba-da-jian-de-hexo-guan-lian-git-github-yu-gitlab-du-ke-yi-ci-chu-zhi-lie-ju-ru-he-guan-lian-github">我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）</span></h3><h4><span id="chuang-jian-cang-ku">创建仓库</span></h4><p>登录你的Github帐号，新建仓库，命名为<strong>用户名.github.io</strong>固定写法，如scooola.github.io即下图中所示：</p>
 <p><img src="/2019/10/22/hexo/github.png" alt>用文本编辑器打开_config.yml,打开后往下滑到最后，修改成下边的样子： </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span> </span><br><span class="line"><span class="attr">    repository:</span> <span class="attr">https://github.com/scooola/scooola.github.io.git</span> </span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
@@ -177,7 +177,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Username for 'https://github.com':</span><br><span class="line">Password for 'https://github.com':</span><br></pre></td></tr></table></figure>
 
 <p>hexo deploy 命令执行成功后，浏览器中打开网址<a href="http://scooola.github.io" target="_blank" rel="noopener">http://scooola.github.io</a>（将scooola换成你的用户名）能看到和打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 时一样的页面。</p>
-<h3 id="发布新文章"><a href="#发布新文章" class="headerlink" title="发布新文章"></a>发布新文章</h3><p>输入 hexo new 文章名.md，即可在wwwroot/source/_posts目录下看的新生成的文件。</p>
+<h3><span id="fa-bu-xin-wen-zhang">发布新文章</span></h3><p>输入 hexo new 文章名.md，即可在wwwroot/source/_posts目录下看的新生成的文件。</p>
 <p><img src="/2019/10/22/hexo/new_blog.png" alt></p>
 <p>随后生成静态网页</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate 或 hexo g</span><br></pre></td></tr></table></figure>
@@ -186,7 +186,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy 或 hexo d</span><br></pre></td></tr></table></figure>
 
 <p>输入完上述命令后，我们就可以在我们的网页上看到新发布的博客了！</p>
-<h4 id="可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客"><a href="#可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客" class="headerlink" title="可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客"></a>可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客</h4><p>下面我们修改配置<strong>post_asset_folder: true</strong></p>
+<h4><span id="ke-shi-mei-you-tu-pian-de-bo-ke-ye-tai-guo-yu-ku-zao-liao-wo-men-xu-yao-xiu-gai-yi-xia-pei-zhi-cai-ke-yi-fa-bu-dai-you-tu-pian-de-bo-ke">可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客</span></h4><p>下面我们修改配置<strong>post_asset_folder: true</strong></p>
 <p><img src="/2019/10/22/hexo/poster_asset_folder.png" alt></p>
 <p>我们再次输入创建博客的命令 hexo new 文件名，发现在source/_posts/目录下创建了一个文件以及同名的文件夹。</p>
 <p><img src="/2019/10/22/hexo/blog_with_photo.png" alt></p>
@@ -198,7 +198,7 @@
 
 <p>引入图片后的效果如下图：</p>
 <p><img src="/2019/10/22/hexo/photo_in_blog.png" alt></p>
-<h3 id="关于md文件插入本地图片在GitHub-Pages无法显示的问题说明"><a href="#关于md文件插入本地图片在GitHub-Pages无法显示的问题说明" class="headerlink" title="关于md文件插入本地图片在GitHub Pages无法显示的问题说明"></a>关于md文件插入本地图片在GitHub Pages无法显示的问题说明</h3><p>由于hexo3版本后对很多插件支持有问题，hexo-asset-image插件在处理data.permalink链接时出现路径错误，把年月去掉了，导致最后生成的路径为%d/xxx/xxx需要对其做兼容处理。通过判断当前版本是否等于3的版本做不同的路径分割。因此，这里提供一个已经修复这个bug的插件</p>
+<h3><span id="guan-yu-md-wen-jian-cha-ru-ben-di-tu-pian-zai-github-pages-wu-fa-xian-shi-de-wen-ti-shuo-ming">关于md文件插入本地图片在GitHub Pages无法显示的问题说明</span></h3><p>由于hexo3版本后对很多插件支持有问题，hexo-asset-image插件在处理data.permalink链接时出现路径错误，把年月去掉了，导致最后生成的路径为%d/xxx/xxx需要对其做兼容处理。通过判断当前版本是否等于3的版本做不同的路径分割。因此，这里提供一个已经修复这个bug的插件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
 <p>之后重新编译发布即可。然后刷新浏览器即可！</p>
@@ -207,7 +207,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck2o0ozvm0001u7xu20uqgvpg" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
+        <a data-url="http://139.180.173.25/2019/10/22/hexo/" data-id="ck2obcjao0001rkxufu3x1nvr" class="article-share-link" data-share="baidu" data-title="hexo">Share</a>
       
 
       
