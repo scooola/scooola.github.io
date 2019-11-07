@@ -2,6 +2,7 @@
 title: python学习笔记
 date: 2019-10-21 03:11:46
 tags: python学习笔记
+toc: true
 ---
 
 # Python学习
@@ -11,7 +12,6 @@ Python是一种跨平台的计算机程序设计语言。是一种面向对象�
 本文主要记录了在学习python过程中所遇到的一些小知识点。
 
 <!-- more -->
-<!-- toc -->
 
 ## 1.`__str__` 和`__repr__`区别
 

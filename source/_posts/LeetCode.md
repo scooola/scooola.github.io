@@ -2,6 +2,7 @@
 title: LeetCode
 date: 2019-11-06 09:50:19
 tags: LeetCode
+toc: true
 ---
 ## LeetCode
 
@@ -10,7 +11,6 @@ tags: LeetCode
 刷题未完全按照LeetCode排列顺序去刷，但是排布会按照题号大小去排列。算法小白，大佬看到勿喷。
 
 <!-- more -->
-<!-- toc -->
 
 ### 1.两数之和
 
