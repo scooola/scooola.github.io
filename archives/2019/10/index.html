@@ -347,14 +347,9 @@
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -465,6 +460,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'j86GER21RDJrgx9rIKsTpeB0-gzGzoHsz',
+    appKey: '7xyNNqCme3v6eUf736HftKuE',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
