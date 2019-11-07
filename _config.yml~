@@ -92,3 +92,13 @@ deploy:
   type: git
   repository: https://github.com/scooola/scooola.github.io.git
   branch: master
+
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+	position: after
+	symbol: '#'
+	style: header-anchor
