@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.2">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.2" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.2">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Python学习Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。  本文主要记录了在学习python过程中所遇到的一些小知识点。">
+<meta name="keywords" content="python学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;139.180.173.25&#x2F;2019&#x2F;10&#x2F;20&#x2F;python&#x2F;index.html">
+<meta property="og:site_name" content="scola的博客">
+<meta property="og:description" content="Python学习Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。  本文主要记录了在学习python过程中所遇到的一些小知识点。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-07T09:29:57.551Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://139.180.173.25/2019/10/20/python/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>python学习笔记 | scola的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">scola的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://139.180.173.25/2019/10/20/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/xiamu.jpg">
+      <meta itemprop="name" content="scola">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="scola的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-21 03:11:46" itemprop="dateCreated datePublished" datetime="2019-10-21T03:11:46+08:00">2019-10-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 17:29:57" itemprop="dateModified" datetime="2019-11-07T17:29:57+08:00">2019-11-07</time>
+              </span>
+
+          
+            <span id="/2019/10/20/python/" class="post-meta-item leancloud_visitors" data-flag-title="python学习笔记" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/10/20/python/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/20/python/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Python学习"><a href="#Python学习" class="headerlink" title="Python学习"></a>Python学习</h1><p>Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。 </p>
+<p>本文主要记录了在学习python过程中所遇到的一些小知识点。</p>
+<a id="more"></a>
+
+<h2 id="1-str-和-repr-区别"><a href="#1-str-和-repr-区别" class="headerlink" title="1.__str__ 和__repr__区别"></a>1.<code>__str__</code> 和<code>__repr__</code>区别</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># __str__ 和 __repr__ 区别</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>__str__</code>用于为最终用户创建输出，而 <code>__repr__</code> 主要用于调试和开发。 <code>__repr__</code> 的目标是明确无误，<code>__str__</code>是可读的</li>
+<li><code>__repr__</code> <a href="https://link.zhihu.com/?target=https%3A//docs.python.org/3/reference/datamodel.html%23object.__repr__">用于推断对象的”官方”字符串表示形式</a>（包含有关对象的所有信息的表示）, <code>__str__</code> <a href="https://link.zhihu.com/?target=https%3A//docs.python.org/3/reference/datamodel.html%23object.__str__">用于推断对象的“非正式”字符串表示形式</a>（对打印对象有用的表示形式）</li>
+</ol>
+<p>再通过一个例子说明问题:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">today = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> str(today)</span><br><span class="line"><span class="keyword">print</span> repr(today)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(str(today))</span><br><span class="line"><span class="number">2018</span><span class="number">-08</span><span class="number">-22</span> <span class="number">16</span>:<span class="number">52</span>:<span class="number">37.403320</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(repr(today))</span><br><span class="line">datetime.datetime(<span class="number">2018</span>, <span class="number">8</span>, <span class="number">22</span>, <span class="number">16</span>, <span class="number">52</span>, <span class="number">37</span>, <span class="number">403320</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>当仅定义 <code>__repr__</code> 的时候， <code>__repr__</code> == <code>__str__</code>, 但是仅定义 <code>__str__</code> 的情况下，两者不相等。当两者均定义的时候，会各自使用自己的方法。</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/42730827" target="_blank" rel="noopener">上述详解</a></p>
+<h2 id="2-init-和-new-关系"><a href="#2-init-和-new-关系" class="headerlink" title="2.__init__和__new__关系"></a>2.<code>__init__</code>和<code>__new__</code>关系</h2><p>python中有二个特殊的方法<code>__new__</code> 和 <code>__init__</code> 方法。<code>__init__</code> 方法为初始化方法, <code>__new__</code>方法才是真正的构造函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"in __new__"</span>)</span><br><span class="line">        instance = object.__new__(cls, *args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        print(<span class="string">"in __init__"</span>)</span><br><span class="line">        self._name = name</span><br><span class="line">        self._age = age</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">"Sheng"</span>, <span class="number">22</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">in</span> __new__</span><br><span class="line"><span class="keyword">in</span> __init__</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中实例化了一个Person对象，可以看到<code>__new__</code>和<code>__init__</code>都被调用了。<code>__new__</code>方法用于创建对象并返回对象，当返回对象时会自动调用<code>__init__</code>方法进行初始化。<code>__new__</code>方法是静态方法，而<code>__init__</code>是实例方法。</p>
+<h2 id="3-python字典赋值新姿势"><a href="#3-python字典赋值新姿势" class="headerlink" title="3.python字典赋值新姿势"></a>3.python字典赋值新姿势</h2><p>平时字典的赋值是:test_dict = {“Name”:”Tom”}</p>
+<p>下面的方法赋值时在后面添加了for语句，可提高字典的赋值效率，且代码更加简洁。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># coding:utf8</span></span><br><span class="line"></span><br><span class="line">person_tom = &#123;<span class="string">"name"</span>:<span class="string">"Tom"</span>,<span class="string">"age"</span>:<span class="number">18</span>&#125;</span><br><span class="line">person_jack = &#123;<span class="string">"name"</span>:<span class="string">"Jack"</span>,<span class="string">"age"</span>:<span class="number">20</span>&#125;</span><br><span class="line">person_list = (person_tom,person_jack)</span><br><span class="line">new_dict = &#123;indicators[<span class="string">"name"</span>]: indicators[<span class="string">"age"</span>]</span><br><span class="line">                          <span class="keyword">for</span> indicators <span class="keyword">in</span> person_list&#125;</span><br><span class="line">print(new_dict)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'Jack'</span>: <span class="number">20</span>, <span class="string">'Tom'</span>: <span class="number">18</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其次还有利用dict()快捷创建字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;dict()                        <span class="comment"># 创建空字典</span></span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict(a=<span class="string">'a'</span>, b=<span class="string">'b'</span>, t=<span class="string">'t'</span>)     <span class="comment"># 传入关键字</span></span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="string">'a'</span>, <span class="string">'b'</span>: <span class="string">'b'</span>, <span class="string">'t'</span>: <span class="string">'t'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict(zip([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))   <span class="comment"># 映射函数方式来构造字典</span></span><br><span class="line">&#123;<span class="string">'three'</span>: <span class="number">3</span>, <span class="string">'two'</span>: <span class="number">2</span>, <span class="string">'one'</span>: <span class="number">1</span>&#125; </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict([(<span class="string">'one'</span>, <span class="number">1</span>), (<span class="string">'two'</span>, <span class="number">2</span>), (<span class="string">'three'</span>, <span class="number">3</span>)])    <span class="comment"># 可迭代对象方式来构造字典</span></span><br><span class="line">&#123;<span class="string">'three'</span>: <span class="number">3</span>, <span class="string">'two'</span>: <span class="number">2</span>, <span class="string">'one'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-格式化字符时多使用format函数"><a href="#4-格式化字符时多使用format函数" class="headerlink" title="4.格式化字符时多使用format函数"></a>4.格式化字符时多使用format函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bad</span></span><br><span class="line">name = <span class="string">"tony"</span></span><br><span class="line">age = <span class="number">100</span></span><br><span class="line">str = <span class="string">"myname : "</span> + name + <span class="string">" my age : "</span> + str(age)</span><br><span class="line">str1 = <span class="string">"myname : %s my age : %d"</span> % (name, age)</span><br><span class="line"><span class="comment"># good</span></span><br><span class="line">str2 = <span class="string">"myname : &#123;&#125; my age &#123;&#125;"</span>.format(name, age)</span><br></pre></td></tr></table></figure>
+
+<p>示例1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br></pre></td></tr></table></figure>
+
+<p>示例2：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"> </span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(name=<span class="string">"百度"</span>, url=<span class="string">"www.baidu.com"</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过字典设置参数</span></span><br><span class="line">site = &#123;<span class="string">"name"</span>: <span class="string">"百度"</span>, <span class="string">"url"</span>: <span class="string">"www.baidu.com"</span>&#125;</span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过列表索引设置参数</span></span><br><span class="line">my_list = [<span class="string">'百度'</span>, <span class="string">'www.baidu.com'</span>]</span><br><span class="line">print(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-使用enumerate代替for循环中的index变量访问"><a href="#5-使用enumerate代替for循环中的index变量访问" class="headerlink" title="5.使用enumerate代替for循环中的index变量访问"></a>5.使用enumerate代替for循环中的index变量访问</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bad</span></span><br><span class="line">my_container = [<span class="string">'lily'</span>, <span class="string">'lucy'</span>, <span class="string">'tom'</span>]</span><br><span class="line">index = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> my_container:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'&#123;&#125; &#123;&#125;'</span>.format(index, element)</span><br><span class="line">    index += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># good</span></span><br><span class="line"><span class="keyword">for</span> index, element <span class="keyword">in</span> enumerate(my_container):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'%d %s'</span> % (index, element)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-避免使用可变-mutable-变量作为函数参数的默认初始化值"><a href="#6-避免使用可变-mutable-变量作为函数参数的默认初始化值" class="headerlink" title="6.避免使用可变(mutable)变量作为函数参数的默认初始化值"></a>6.避免使用可变(mutable)变量作为函数参数的默认初始化值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bad</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">(l = [])</span>:</span></span><br><span class="line"> l.append(<span class="number">1</span>)</span><br><span class="line"> <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line"> <span class="keyword">print</span> function()</span><br><span class="line"> <span class="keyword">print</span> function()</span><br><span class="line"> <span class="keyword">print</span> function()</span><br><span class="line"></span><br><span class="line"> <span class="comment"># print</span></span><br><span class="line"> [<span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"> <span class="comment"># good 使用None作为可变对象占位符</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">(l=None)</span>:</span></span><br><span class="line">     <span class="keyword">if</span> l <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">         l = []</span><br><span class="line">     l.append(<span class="number">1</span>)</span><br><span class="line">     <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-is-和-的区别"><a href="#7-is-和-的区别" class="headerlink" title="7.is 和 == 的区别"></a>7.is 和 == 的区别</h2><p><strong>is比较的是两个对象的id值是否相等，也就是比较两个对象是否为同一个实例对象，是否指向同一个内存地址。</strong></p>
+<p><strong>== 比较的是两个对象的内容是否相等，默认会调用对象的<code>__eq__()</code>方法。</strong></p>
+<h3 id="哪些情况下is和-结果是完全相同的"><a href="#哪些情况下is和-结果是完全相同的" class="headerlink" title="哪些情况下is和==结果是完全相同的"></a>哪些情况下is和==结果是完全相同的</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">256</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">256</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1000</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10</span>**<span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么256时相同， 而1000时不同？</strong></p>
+<p>因为出于对性能的考虑，Python内部做了很多的优化工作，对于整数对象，Python把一些频繁使用的整数对象缓存起来，保存到一个叫small_ints的链表中，在Python的整个生命周期内，任何需要引用这些整数对象的地方，都不再重新创建新的对象，而是直接引用缓存中的对象。Python把这些可能频繁使用的整数对象规定在范围[-5, 256]之间的小对象放在small_ints中，但凡是需要用些小整数时，就从这里面取，不再去临时创建新的对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1 = <span class="string">'Hi'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1 = <span class="string">'Hi'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1 <span class="keyword">is</span> b1</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1 == b1</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a2 = <span class="string">'I am using long string for test'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b2 = <span class="string">'I am using long string for test'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a2 <span class="keyword">is</span> b2</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a2 == b2</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么a1与b1相同，而a2与b2不同？</strong></p>
+<p>这是python中的<strong>string interning（字符串驻留）</strong>机制所决定的：对于较小的字符串，为了提高系统性能会保留其值的一个副本，当创建新的字符串的时候直接指向该副本即可。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>当变量是数字、字符串、元组，列表，字典时，is和==都不相同， 不能互换使用！当比较值时，要使用==，比较是否是同一个内存地址时应该使用is。当然，开发中比较值的情况比较多。</p>
+<h2 id="8-了解bytes、str与unicode的区别"><a href="#8-了解bytes、str与unicode的区别" class="headerlink" title="8.了解bytes、str与unicode的区别"></a>8.了解bytes、str与unicode的区别</h2><p>在<code>Python3</code>中，有两种类型的字符代表序列：<code>bytes(字节)</code>和 <code>str（字符串）</code>。字节的实例包含8个原生的比特值，而字符串的实例则是用Unicode字符来堆砌的。</p>
+<p>在<code>Python2</code>中，有两种类型的字符代表序列：<code>str(字符串)</code> 和 <code>unicode(Unicode字符)</code>。与<code>Python3</code>相反，字符串实例代表着原生的8比特值序列，而<code>unicode</code>则由<code>Unicode</code>字符堆砌而成。</p>
+<p>要想将<code>Unicode</code>字符转换成二进制数据，就必须使用<code>encode</code>方法，反过来，要想把二进制数据转换成<code>Unicode</code>字符，就必须使用<code>decode</code>方法。</p>
+<p><strong>两大陷阱</strong></p>
+<p>在<code>Python</code>中处理原生的8比特值 序列以及<code>Unicode</code>字符的时候，有两大陷阱。</p>
+<p>一个是在<code>Python2</code>中，当一个<code>str</code>数据仅仅包含7比特的<code>ASCII</code>码字符的时候，<code>unicode</code>和<code>str</code>实例看起来是一致的。</p>
+<ul>
+<li>可以使用‘+’运算符和合并str和unicode。</li>
+<li>可以使用等价或者不等价运算符来比较str和unicode实例。</li>
+<li>可以使用unicode来代换 像‘%s’这种字符串中的格式化占位符。</li>
+</ul>
+<p>以上行为意味着，如果你的代码中仅仅处理原生的7比特序列，那么便可以不必在意是<code>str</code>类型的数据还是<code>unicode</code>类型的数据了。在<code>Python3</code>中，<code>bytes</code>和<code>str</code>实例是不可能等价的，即使是空的字符串也不可能等价。所以你必须谨慎地对正在处理的代码进行字符类别的区分处理。</p>
+<p>另一个是在<code>Python3</code>中，涉及到文件处理的操作（使用内置的<code>open</code>函数）会默认的以<code>UTF-8</code>进行编码。而在<code>Python2</code>中默认采用二进制形式来编码。这也是导致意外事故发生的根源，特别是对于那些更习惯于使用<code>Python2</code>的程序员而言。</p>
+<p>比方说，你想将几个随机的二进制数据写入到一个文件中。在<code>Python2</code>中，下面的这段代码可以正常的工作，但是在<code>Python3</code>中却会报错并退出。详细信息如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(<span class="string">'/tmp/random.bin'</span>,<span class="string">'w'</span>)</span> <span class="title">as</span> <span class="title">f</span>:</span></span><br><span class="line">    <span class="comment"># os.urandom() 随即产生n个字节的字符串，可以作为随机加密key使用</span></span><br><span class="line">    f.write(os.urandom(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">TypeError: must be str,<span class="keyword">not</span> bytes</span><br></pre></td></tr></table></figure>
+
+<p>导致这个异常发生的原因是在<code>Python3</code>中对于<code>open</code>函数又新增了一个名为<code>encoding</code>的参数。此参数默认为<code>UTF-8</code>。这使得其对于文件的读写操作预期的源为包含了<code>Unicode</code>字符串的<code>str</code>实例，而不是包含了二进制数据的字节文件。</p>
+<p>为了使得上面的函数正常的工作，我们必须指明被操作的数据是以‘wb’模式打开，而不是简单的‘w’模式。这里，作者介绍了一个在<code>Python2</code>和<code>Python3</code> 中都通用的方法，详细如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'/tmp/random.bin'</span>,<span class="string">'wb) as f:</span></span><br><span class="line"><span class="string">    f.write(os.urandom(10))</span></span><br></pre></td></tr></table></figure>
+
+<p>好了，写文件的问题算是解决了，但是不要忘了还有读文件的问题哦。同样的我们也只需要改变一下读文件的模式即可。即‘r’换成‘rb’。</p>
+<h2 id="9-python-星号"><a href="#9-python-星号" class="headerlink" title="9.python 星号"></a>9.python 星号</h2><p>在Python中，调用函数时，利用<code>*</code>语句可以将参数列表解包，如下所示，<code>foo</code>有两个参数，我们可以传入一个参数列表<code>num_list</code>，然后利用<code>*</code>运算符，解包参数列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(bar,lee)</span>:</span></span><br><span class="line">   ...:     <span class="keyword">print</span> bar, lee</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: num_list = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: foo(*num_list)</span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>序列解包</strong></p>
+<p>在<strong>Python3.0</strong>之后，Python提供了一种非常方便的办法解压可迭代对象赋值给多个变量。</p>
+<p>另外一种情况，假设你现在有一些用户的记录列表，每条记录包含一个名字、邮件，接着就是不确定数量的电话号码。 你可以像下面这样分解这些记录：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>record = (<span class="string">'Dave'</span>, <span class="string">'dave@example.com'</span>, <span class="string">'773-555-1212'</span>, <span class="string">'847-555-1212'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name, email, *phone_numbers = record</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name</span><br><span class="line"><span class="string">'Dave'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>email</span><br><span class="line"><span class="string">'dave@example.com'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>phone_numbers</span><br><span class="line">[<span class="string">'773-555-1212'</span>, <span class="string">'847-555-1212'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是上面解压出的 <code>phone_numbers</code> 变量永远都是列表类型，不管解压的电话号码数量是多少（包括 0 个）。 所以，任何使用到 <code>phone_numbers</code> 变量的代码就不需要做多余的类型检查去确认它是否是列表类型了。</p>
+<p>星号表达式也能用在列表的开始部分。比如，你有一个公司前 8 个月销售数据的序列， 但是你想看下最近一个月数据和前面 7 个月的平均值的对比。你可以这样做：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*trailing_qtrs, current_qtr = sales_record</span><br><span class="line">trailing_avg = sum(trailing_qtrs) / len(trailing_qtrs)</span><br><span class="line"><span class="keyword">return</span> avg_comparison(trailing_avg, current_qtr)</span><br></pre></td></tr></table></figure>
+
+<p>下面是在 Python 解释器中执行的结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>*trailing, current = [<span class="number">10</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>trailing</span><br><span class="line">[<span class="number">10</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>current</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Keyword-Only-Arguments"><a href="#Keyword-Only-Arguments" class="headerlink" title="Keyword-Only Arguments"></a>Keyword-Only Arguments</h2><p>在Python3中，也加入了一个新的语法（参见 <a href="https://www.python.org/dev/peps/pep-3102/" target="_blank" rel="noopener">PEP 3102</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2, arg3, *, kwarg1, kwarg2)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>这个函数只接受3个位置参数，<code>*</code>之后的所有内容只能作为关键字参数传递(只能由关键字提供的参数，并且永远不会被位置参数自动填充)。</p>
+<p><a href="https://sikasjc.github.io/2018/10/12/star/" target="_blank" rel="noopener">更加详细相关内容请戳</a></p>
+<h2 id="10-描述器"><a href="#10-描述器" class="headerlink" title="10.描述器"></a>10.描述器</h2><p>Python 有三个特殊方法，<code>__get__</code>、<code>__set__</code>、<code>__delete__</code>，用于覆盖属性的一些默认行为，如果一个类定义了其中一个方法，那么它的实例就是描述器</p>
+<p>描述器是一种代理机制，对属性的操作由这个描述器来代理</p>
+<p>访问: <code>__get__(self, instance, cls)</code> # instance 代表实例本身，cls 表示类本身，使用类直接访问时，instance 为 None</p>
+<p>赋值: <code>__set__(self, instance, value)</code> # instance 为实例，value 为值</p>
+<p>删除: <code>__delete__(self, instance)</code> # instance 为实例</p>
+<p><a href="https://anyisalin.github.io/2017/03/08/python-descriptor/" target="_blank" rel="noopener">更加详细相关内容请戳</a></p>
+<h2 id="11-Unicode码转中文输出"><a href="#11-Unicode码转中文输出" class="headerlink" title="11.Unicode码转中文输出"></a>11.Unicode码转中文输出</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">unicode_str = <span class="string">"\u4e2d\u56fd"</span></span><br><span class="line"><span class="keyword">print</span> unicode_str.decode(<span class="string">"unicode-escape"</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">中国</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-将python对象保存到-bin文件"><a href="#12-将python对象保存到-bin文件" class="headerlink" title="12.将python对象保存到.bin文件"></a>12.将python对象保存到.bin文件</h2><p><a href="http://skyhigh233.com/blog/2016/11/18/effective-python-4/" target="_blank" rel="noopener">详细点击</a></p>
+<p><strong>Effective Python 第44条</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*-coding:utf8-*-</span></span><br><span class="line"><span class="comment"># 该代码为自己写的测试</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将GameState实例化对象通过save()保存到game_data.bin</span></span><br><span class="line"><span class="comment"># 通过read()将game_data.bin内保存的实例化对象还原</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copyreg.pickle(GameState, pickle_game_state)的目的：</span></span><br><span class="line"><span class="comment"># 实例化对象保存到game_data.bin后，GameState加入新字段</span></span><br><span class="line"><span class="comment"># GameState加了新字段后，读取会读的到新字段，且新字段值为默认值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> copyreg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GameState</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, level=<span class="number">0</span>, lives=<span class="number">3</span>, exp=<span class="number">0</span>)</span>:</span></span><br><span class="line">        self.level = level</span><br><span class="line">        self.lives = lives</span><br><span class="line">        self.exp = exp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">path = <span class="string">"./game_data.bin"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">()</span>:</span></span><br><span class="line">    state = GameState()</span><br><span class="line">    <span class="keyword">with</span> open(path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(state, f)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(path, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        state_after = pickle.load(f)</span><br><span class="line">    <span class="keyword">print</span> state_after.__dict__</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pickle_game_state</span><span class="params">(game_state)</span>:</span></span><br><span class="line">    kwargs = game_state.__dict__</span><br><span class="line">    <span class="keyword">return</span> unpickle_game_state, (kwargs,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unpickle_game_state</span><span class="params">(kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> GameState(**kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment"># copyreg模块注册pickle_game_state</span></span><br><span class="line">    <span class="comment"># 目的是：GameState加了新字段后，读取会读的到新字段，且新字段值为默认值</span></span><br><span class="line">    copyreg.pickle(GameState, pickle_game_state)</span><br><span class="line">    <span class="comment"># save()</span></span><br><span class="line">    read()</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-python2和python3同时安装导致python3的pip报错解决"><a href="#13-python2和python3同时安装导致python3的pip报错解决" class="headerlink" title="13.python2和python3同时安装导致python3的pip报错解决"></a>13.python2和python3同时安装导致python3的pip报错解决</h2><p>原来只安装了python2.7。后来因为要用到python3，为了让两者共存，降python3的运行文件改成了python3.exe. 问题就此而来，这时候运行python3 的pip会遇到如下错误</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fatal error <span class="keyword">in</span> launcher: Unable to create process using</span><br></pre></td></tr></table></figure>
+
+<p>但是运行pip2是好的。如果这时候讲python2.7的运行文件改成Python2.exe，你就会发现pip2 也抛出了通用的错误。由此可以断定这个错误是因为改动了python的执行文件的名字造成的。</p>
+<p>网上看了很多方案都说直接运行 python3 -m pip install –upgrade pip 来升级pip版本就好了，这个在大多数情况下都是有用的。因为重装以后会根据更改后的python的执行文件来创建关联。 但是如果你的pip已经是最新版本的话就行不通了，因为已经是最新的版本根本就不让你升级。那么就用下面的命令来强制重装 pip</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3  -m pip install --upgrade --force-reinstall pip</span><br></pre></td></tr></table></figure>
+
+<p>至此就解决了pip的错误。</p>
+<h2 id="14-virtualenv-分别创建Python2和Python3的虚拟空间"><a href="#14-virtualenv-分别创建Python2和Python3的虚拟空间" class="headerlink" title="14.virtualenv 分别创建Python2和Python3的虚拟空间"></a>14.virtualenv 分别创建Python2和Python3的虚拟空间</h2><p>virtualenv是python开发中经常要用到的一个工具，如果在开发多个程序时候，A程序需要用python2.7，B程序需要python3时候，就可以利用virtualenv来创建一套独立的环境</p>
+<p>接下来，在自己想要创建的目录中创建一个独立的python环境，</p>
+<p>如果要创建<strong>python2</strong>的环境的话，命令为</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p D:\Python\python.exe env2.<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<p>创建<strong>python3</strong>的环境命令如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p D:\python37\python3.exe env3<span class="number">.7</span></span><br></pre></td></tr></table></figure>
+
+<p>以上路径需要替换为自己的python2和python3的安装路径。</p>
+<p>如果要创建一个不带已经安装到系统的中第三方包的环境，可以加上参数 –no-site-packages，这样就可以得到一个不带任何第三方包的干净的python运行环境，命令为:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv --no-site-packages myenv</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用</strong>：</p>
+<p><strong>进入虚拟环境</strong>：</p>
+<p>在你的虚拟环境目录下的Scripts内<code>your_env_dir\Scripts</code>，输入<strong>activate</strong>即可在虚拟环境内开发。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">pyProject</span>\<span class="title">test</span>\<span class="title">test_virtualenv</span>\<span class="title">env3</span>.7\<span class="title">Scripts</span>&gt;<span class="title">activate</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">(<span class="title">env3</span>.7) <span class="title">D</span>:\<span class="title">pyProject</span>\<span class="title">test</span>\<span class="title">test_virtualenv</span>\<span class="title">env3</span>.7\<span class="title">Scripts</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>退出虚拟环境</strong>：</p>
+<p>输入<strong>deactivate</strong>即可退出虚拟环境。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(env3.<span class="number">7</span>) D:\pyProject\test\test_virtualenv\env3.<span class="number">7</span>\Scripts&gt;deactivate</span><br><span class="line"><span class="function">D:\<span class="title">pyProject</span>\<span class="title">test</span>\<span class="title">test_virtualenv</span>\<span class="title">env3</span>.7\<span class="title">Scripts</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>pycharm使用虚拟环境</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File --&gt; Settings --&gt; Project:your project name --&gt; Project Interpreter --&gt; 点击设置图标 --&gt; Add --&gt; System Interpreter --&gt; ...图标 --&gt; 选择虚拟环境目录\Scripts --&gt; 选择python.exe</span><br></pre></td></tr></table></figure>
+
+<p>这样pycharm运行就会使用虚拟环境的python解释器以及虚拟环境内的第三方包。</p>
+<p><strong>注意</strong>：</p>
+<p>使用虚拟环境时，有个地方需要注意，那就是别移动环境目录，因为所有的路径（包括python3命令所指向的路径），都以硬编码的形式写在了安装目录之中，如果移动了，那么环境自然就会失效。为此我们可以将旧环境的依赖关系导出，然后创建新的环境。</p>
+<p>导出环境：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>恢复环境：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在requirements.txt所在目录下运行</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h2 id="15-windows-pip安装第三方包报错"><a href="#15-windows-pip安装第三方包报错" class="headerlink" title="15.windows pip安装第三方包报错"></a>15.windows pip安装第三方包报错</h2><p>报错如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输入如下命令解决：<br>pip install –user package_name</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># python学习笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/10/22/hexo/" rel="prev" title="hexo">
+                  hexo <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python学习"><span class="nav-text">Python学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-str-和-repr-区别"><span class="nav-text">1.__str__ 和__repr__区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-init-和-new-关系"><span class="nav-text">2.__init__和__new__关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-python字典赋值新姿势"><span class="nav-text">3.python字典赋值新姿势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-格式化字符时多使用format函数"><span class="nav-text">4.格式化字符时多使用format函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-使用enumerate代替for循环中的index变量访问"><span class="nav-text">5.使用enumerate代替for循环中的index变量访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-避免使用可变-mutable-变量作为函数参数的默认初始化值"><span class="nav-text">6.避免使用可变(mutable)变量作为函数参数的默认初始化值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-is-和-的区别"><span class="nav-text">7.is 和 == 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哪些情况下is和-结果是完全相同的"><span class="nav-text">哪些情况下is和==结果是完全相同的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-了解bytes、str与unicode的区别"><span class="nav-text">8.了解bytes、str与unicode的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python-星号"><span class="nav-text">9.python 星号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keyword-Only-Arguments"><span class="nav-text">Keyword-Only Arguments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-描述器"><span class="nav-text">10.描述器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Unicode码转中文输出"><span class="nav-text">11.Unicode码转中文输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-将python对象保存到-bin文件"><span class="nav-text">12.将python对象保存到.bin文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python2和python3同时安装导致python3的pip报错解决"><span class="nav-text">13.python2和python3同时安装导致python3的pip报错解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-virtualenv-分别创建Python2和Python3的虚拟空间"><span class="nav-text">14.virtualenv 分别创建Python2和Python3的虚拟空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-windows-pip安装第三方包报错"><span class="nav-text">15.windows pip安装第三方包报错</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="scola"
+    src="/images/xiamu.jpg">
+  <p class="site-author-name" itemprop="name">scola</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">scola</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  </div>
+
+        
+
+
+
+
+
+
+  
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=j86GER21RDJrgx9rIKsTpeB0-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'j86GER21RDJrgx9rIKsTpeB0-gzGzoHsz',
+            'X-LC-Key': '7xyNNqCme3v6eUf736HftKuE',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
+<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'j86GER21RDJrgx9rIKsTpeB0-gzGzoHsz',
+    appKey: '7xyNNqCme3v6eUf736HftKuE',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
