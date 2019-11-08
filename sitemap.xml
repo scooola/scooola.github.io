@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://scooola.github.io/2019/11/06/LeetCode/</loc>
+    
+    <lastmod>2019-11-08T06:31:16.519Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://scooola.github.io/2019/10/20/python/</loc>
     
     <lastmod>2019-11-07T16:40:23.478Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://scooola.github.io/2019/10/22/hexo/</loc>
     
     <lastmod>2019-11-07T16:40:23.428Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://scooola.github.io/2019/11/06/LeetCode/</loc>
-    
-    <lastmod>2019-11-07T16:40:23.422Z</lastmod>
     
   </url>
   
