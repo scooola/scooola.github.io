@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://139.180.173.25
+url: https://scooola.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -103,8 +103,14 @@ toc:
 	symbol: '#'
 	style: header-anchor
 
+# 站内搜索栏
 search:
   path: search.xml
   field: post
   format: html
   limit: 10000
+
+
+# 站点地图
+sitemap:
+  path: sitemap.xml
