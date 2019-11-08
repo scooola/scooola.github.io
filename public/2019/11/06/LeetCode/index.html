@@ -38,8 +38,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="scola的博客">
 <meta property="og:description" content="LeetCode最近在学习python3，便想到了用python3刷LeetCode，既可以学习到python3的一些语法细节，也可以锻炼算法能力。 刷题未完全按照LeetCode排列顺序去刷，但是排布会按照题号大小去排列。算法小白，大佬看到勿喷。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T09:31:47.937Z">
+<meta property="og:updated_time" content="2019-11-07T16:40:23.422Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://139.180.173.25/2019/11/06/LeetCode/">
@@ -150,9 +150,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -206,7 +231,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 17:31:47" itemprop="dateModified" datetime="2019-11-07T17:31:47+08:00">2019-11-07</time>
+                <time title="Modified: 2019-11-08 00:40:23" itemprop="dateModified" datetime="2019-11-08T00:40:23+08:00">2019-11-08</time>
               </span>
 
           
@@ -1100,6 +1125,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.4.2"></script>
 
 
 
