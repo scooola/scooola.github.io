@@ -339,8 +339,6 @@ return avg_comparison(trailing_avg, current_qtr)
 3
 ```
 
-## Keyword-Only Arguments
-
 在Python3中，也加入了一个新的语法（参见 [PEP 3102](https://www.python.org/dev/peps/pep-3102/)）
 
 ```python
