@@ -2,7 +2,6 @@
 title: python学习笔记
 date: 2019-10-21 03:11:46
 tags: python学习笔记
-toc: true
 ---
 
 # Python学习
@@ -12,6 +11,7 @@ Python是一种跨平台的计算机程序设计语言。是一种面向对象�
 本文主要记录了在学习python过程中所遇到的一些小知识点。
 
 <!-- more -->
+<!-- toc -->
 
 ## 1.`__str__` 和`__repr__`区别
 
@@ -525,12 +525,122 @@ pip freeze > requirements.txt
 # 在requirements.txt所在目录下运行
 pip install -r requirements.txt
 ```
-## 15.windows pip安装第三方包报错
+## 15.python取余运算与地板除	
+
+python中取余运算逻辑如下：
+
+如果*a* 与*d* 是整数，*d* 非零，那么余数 *r* 满足这样的关系：
+
+a = qd + r , q 为整数，且0 ≤ |r| < |d|。
+
+```python
+# 取余
+In [3]: -53%10
+Out[3]: 7
+# -53 = 10 * (-6) + 7
+```
+
+```python
+# 地板除
+In [2]: -53//10
+Out[2]: -6
+```
+
+## 16.windows pip安装第三方包报错
 
 报错如下：
 ```cmd
-
+Exception:
+Traceback (most recent call last):
+  File "d:\python27\lib\site-packages\pip\basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "d:\python27\lib\site-packages\pip\commands\install.py", line 324, in run
+    requirement_set.prepare_files(finder)
+  File "d:\python27\lib\site-packages\pip\req\req_set.py", line 380, in prepare_files
+    ignore_dependencies=self.ignore_dependencies))
+  File "d:\python27\lib\site-packages\pip\req\req_set.py", line 620, in _prepare_file
+    session=self.session, hashes=hashes)
+  File "d:\python27\lib\site-packages\pip\download.py", line 821, in unpack_url
+    hashes=hashes
+  File "d:\python27\lib\site-packages\pip\download.py", line 659, in unpack_http_url
+    hashes)
+  File "d:\python27\lib\site-packages\pip\download.py", line 882, in _download_http_url
+    _download_url(resp, link, content_file, hashes)
+  File "d:\python27\lib\site-packages\pip\download.py", line 603, in _download_url
+    hashes.check_against_chunks(downloaded_chunks)
+  File "d:\python27\lib\site-packages\pip\utils\hashes.py", line 46, in check_against_chunks
+    for chunk in chunks:
+  File "d:\python27\lib\site-packages\pip\download.py", line 571, in written_chunks
+    for chunk in chunks:
+  File "d:\python27\lib\site-packages\pip\utils\ui.py", line 139, in iter
+    for x in it:
+  File "d:\python27\lib\site-packages\pip\download.py", line 560, in resp_read
+    decode_content=False):
+  File "d:\python27\lib\site-packages\pip\_vendor\urllib3\response.py", line 436, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "d:\python27\lib\site-packages\pip\_vendor\urllib3\response.py", line 401, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "d:\python27\lib\contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "d:\python27\lib\site-packages\pip\_vendor\urllib3\response.py", line 316, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, 'Read timed out.')
+ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
 ```
 输入如下命令解决：
-pip install --user package_name
 
+```shell
+pip install --user package_name
+```
+
+ 参考：https://blog.csdn.net/stevenkwong/article/details/68489870 
+
+## 17.python同类型名方法调用新姿势
+
+若要调用很多方法名类似的方法，如hello_1,hello_2...等，可用如下方法调用。
+
+```python
+class hello(object):
+    def hello_world(self):
+        print("hello world!")
+
+    def hello_python(self):
+        print("hello python!")
+
+    def hello_what(self, what):
+        data = f"hello {what}"
+        print(data)
+
+    def hello_self(self):
+        # class内调用本类方法也可以
+        list = ["world", "python"]
+        for i in list:
+            parameter = f"hello_{i}"
+            getattr(self, parameter)()
+
+
+if __name__ == "__main__":
+    list = ["world", "python"]
+    h = hello()
+    for i in list:
+        parameter = f"hello_{i}"
+        print(parameter)
+        getattr(h, parameter)()
+    
+    # 带参数方法调用
+    getattr(h, "hello_what")("python 3.7")
+
+    print("\n====================")
+    h.hello_self()
+    
+
+# 输出
+hello_world
+hello world!
+hello_python
+hello python!
+hello python 3.7
+
+====================
+hello world!
+hello python!
+```
