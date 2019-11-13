@@ -988,6 +988,100 @@ ret = Solution().removeElement(s, 3)
 print(ret)
 ```
 
+### 28. 实现 strStr()
+
+实现 strStr() 函数。
+
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回 -1。
+
+**示例 1**:
+
+输入: haystack = "hello", needle = "ll"
+
+输出: 2
+
+**示例 2**:
+
+输入: haystack = "aaaaa", needle = "bba"
+
+输出: -1
+
+说明:
+
+当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+
+对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
+
+```python
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        for i in range(0, len(haystack) - len(needle) + 1):
+            if haystack[i:i + len(needle)] == needle:
+                return i
+        return -1
+
+
+haystack = "mississippi"
+needle = "issip"
+ret = Solution().strStr(haystack, needle)
+print(ret)
+```
+
+### 35. 搜索插入位置
+
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+
+你可以假设数组中无重复元素。
+
+**示例 1**:
+
+输入: [1,3,5,6], 5
+
+输出: 2
+
+**示例 2**:
+
+输入: [1,3,5,6], 2
+
+输出: 1
+
+**示例 3**:
+
+输入: [1,3,5,6], 7
+
+输出: 4
+
+示例 4:
+
+输入: [1,3,5,6], 0
+
+输出: 0
+
+```python
+class Solution:
+    def searchInsert(self, nums: [int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+        while left <= right:
+            middle = (left + right) // 2
+            if nums[middle] == target:
+                return middle
+            elif nums[middle] < target:
+                left = middle + 1
+            else:
+                right = middle - 1
+        if nums[middle] < target:
+            middle += 1
+        return middle
+
+
+s = [1, 3, 5, 6]
+ret = Solution().searchInsert(s, 10)
+print(ret)
+```
+
+
+
 ### 53. 最大子序和-动态规划
 
 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
@@ -1063,6 +1157,53 @@ class Solution:
 s = Solution()
 nums = [2, 3, 1, 1, 4]
 ret = s.canJump(nums)
+print(ret)
+```
+
+### 58. 最后一个单词的长度
+
+给定一个仅包含大小写字母和空格 ' ' 的字符串，返回其最后一个单词的长度。
+
+如果不存在最后一个单词，请返回 0 。
+
+**说明**：一个单词是指由字母组成，但不包含任何空格的字符串。
+
+**示例**:
+
+输入: "Hello World"
+
+输出: 5
+
+```python
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        ret = s.split(' ')
+        print(ret)
+        for i in range(len(ret)-1, -1, -1):
+            if len(ret[i]) > 0:
+                return len(ret[i])
+        return 0
+```
+
+另一种解法：
+
+```python
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        index = len(s) - 1
+        # 从后往前，先找到不为空的位置
+        while index >= 0 and s[index] == ' ':
+            index -= 1
+        length = index
+        # 再紧接着找到下一个为空的位置
+        while index >= 0 and s[index] != ' ':
+            index -= 1
+        # 两位置相减即为单词长度
+        return length - index
+
+
+s = "Today is a nice day"
+ret = Solution().lengthOfLastWord(s)
 print(ret)
 ```
 
@@ -2198,4 +2339,3 @@ class Solution:
 s = Solution()
 print(s.removeDuplicates("abbaca"))
 ```
-
