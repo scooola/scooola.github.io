@@ -3,7 +3,7 @@
   <entry>
     <title>Linux笔记</title>
     <url>/2019/12/22/Linux%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h2><p>本片博客用于记录在Linux学习过程中遇到的小问题及其解决办法。</p>
+    <content><![CDATA[<h2 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h2><p>本篇博客用于记录在Linux学习过程中遇到的小问题及其解决办法。</p>
 <a id="more"></a>
 
 <h3 id="1-Ubuntu下pip和sudo-pip路径指向修改"><a href="#1-Ubuntu下pip和sudo-pip路径指向修改" class="headerlink" title="1.Ubuntu下pip和sudo pip路径指向修改"></a>1.Ubuntu下pip和sudo pip路径指向修改</h3><p><strong>查看现有pip路径指向</strong></p>
