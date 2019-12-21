@@ -51,14 +51,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="scola的博客">
-<meta property="og:url" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;tags&#x2F;python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
+  <meta name="description" content="Linux笔记本片博客用于记录在Linux学习过程中遇到的小问题及其解决办法。">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;12&#x2F;22&#x2F;Linux%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="scola的博客">
+<meta property="og:description" content="Linux笔记本片博客用于记录在Linux学习过程中遇到的小问题及其解决办法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-21T16:48:36.634Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://scooola.github.io/tags/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://scooola.github.io/2019/12/22/Linux%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -66,13 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Tag: python学习笔记 | scola的博客</title>
+  <title>Linux笔记 | scola的博客</title>
   
 
 
@@ -193,54 +197,122 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">python学习笔记
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://scooola.github.io/2019/12/22/Linux%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/xiamu.jpg">
+      <meta itemprop="name" content="scola">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="scola的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux笔记
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-22 00:42:47 / Modified: 00:48:36" itemprop="dateCreated datePublished" datetime="2019-12-22T00:42:47+08:00">2019-12-22</time>
+            </span>
+
+          
+            <span id="/2019/12/22/Linux%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="Linux笔记" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/12/22/Linux%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/22/Linux%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <h2 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h2><p>本片博客用于记录在Linux学习过程中遇到的小问题及其解决办法。</p>
+<a id="more"></a>
+
+<h3 id="1-Ubuntu下pip和sudo-pip路径指向修改"><a href="#1-Ubuntu下pip和sudo-pip路径指向修改" class="headerlink" title="1.Ubuntu下pip和sudo pip路径指向修改"></a>1.Ubuntu下pip和sudo pip路径指向修改</h3><p><strong>查看现有pip路径指向</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@sxj-VirtualBox:/home/sxj# pip -V</span><br><span class="line">pip 1.5.1 from /usr/lib/python2.7/dist-packages/pip (python 2.7)</span><br></pre></td></tr></table></figure>
+
+<p> <strong>pip位置修改</strong> </p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">打开bash文件修改</span></span><br><span class="line">sudo vim ~/.bashrc</span><br><span class="line"><span class="meta">#</span><span class="bash">在最后一行添加如下命令：</span></span><br><span class="line">alias pip=/usr/local/bin/pip</span><br><span class="line"><span class="meta">#</span><span class="bash">更新bash文件</span></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>sudo pip位置修改</strong> </p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改etc目录</span></span><br><span class="line">sudo vim /etc/profile</span><br><span class="line"><span class="meta">#</span><span class="bash">在最后一行添加如下命令：</span></span><br><span class="line">alias pip=/usr/local/bin/pip</span><br><span class="line"><span class="meta">#</span><span class="bash">保存退出后，使用如下更新命令</span></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>  参考： <a href="https://blog.csdn.net/mecong/article/details/90453111" target="_blank" rel="noopener">https://blog.csdn.net/mecong/article/details/90453111</a> </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-21T03:11:46+08:00"
-              content="2019-10-21">
-          10-21
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/10/21/python/" itemprop="url">
-            <span itemprop="name">python学习笔记</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/06/LeetCode/" rel="next" title="LeetCode">
+                  <i class="fa fa-chevron-left"></i> LeetCode
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -265,6 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux笔记"><span class="nav-text">Linux笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Ubuntu下pip和sudo-pip路径指向修改"><span class="nav-text">1.Ubuntu下pip和sudo pip路径指向修改</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
