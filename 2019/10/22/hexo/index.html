@@ -74,7 +74,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;poster_asset_folder.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;blog_with_photo.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;photo_in_blog.png">
-<meta property="og:updated_time" content="2019-12-20T23:49:28.868Z">
+<meta property="og:updated_time" content="2019-12-26T02:10:03.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;10&#x2F;22&#x2F;hexo&#x2F;start.png">
 
@@ -235,6 +235,7 @@
         </h1>
 
         <div class="post-meta">
+	  
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -248,7 +249,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-21 07:49:28" itemprop="dateModified" datetime="2019-12-21T07:49:28+08:00">2019-12-21</time>
+                <time title="Modified: 2019-12-26 10:10:03" itemprop="dateModified" datetime="2019-12-26T10:10:03+08:00">2019-12-26</time>
               </span>
 
           
@@ -451,6 +452,12 @@
 <p>再次生成页面，应该已经可以显示比较美观的目录了。</p>
 <h4 id="收尾工作"><a href="#收尾工作" class="headerlink" title="收尾工作"></a>收尾工作</h4><p>通常情况下我们不需要为每一篇文章都添加目录，因为大部分文章的长度还是相对较短，或者结构简单而没有添加小标题。在我的博客上，需要添加目录的长文还是相对较少的。因为我选择了默认不生成目录，而手动为需要目录的文章添加显式地标记。</p>
 <p>下面我就需要编辑每一篇需要添加目录的文章，在文章开头的front-matter中加入<code>toc: true</code>。</p>
+<h3 id="加入文章置顶功能"><a href="#加入文章置顶功能" class="headerlink" title="加入文章置顶功能"></a>加入文章置顶功能</h3><p>目前已经有修改后支持置顶的仓库，可以直接用以下命令安装。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall hexo-generator-index --save</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-generator-index-pin-top --save</span></span><br></pre></td></tr></table></figure>
+<p>然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo</span><br><span class="line">date: 2019-10-22 15:02:19</span><br><span class="line">tags: 实践</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><strong>设置置顶标志</strong><br>打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：</div></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -517,7 +524,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Hexo建立个人博客站点"><span class="nav-text">通过Hexo建立个人博客站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Hexo？"><span class="nav-text">什么是 Hexo？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前提"><span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-git基础安装"><span class="nav-text">1.git基础安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装-Node-js"><span class="nav-text">2.安装 Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩坑！！"><span class="nav-text">踩坑！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-部署Hexo"><span class="nav-text">3.部署Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-列举几个常用配置"><span class="nav-text">4.列举几个常用配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#坑！！注意！！！"><span class="nav-text">坑！！注意！！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-启动Hexo"><span class="nav-text">5.启动Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！"><span class="nav-text">好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）"><span class="nav-text">我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建仓库"><span class="nav-text">创建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布新文章"><span class="nav-text">发布新文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客"><span class="nav-text">可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于md文件插入本地图片在GitHub-Pages无法显示的问题说明"><span class="nav-text">关于md文件插入本地图片在GitHub Pages无法显示的问题说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo博客迁移"><span class="nav-text">hexo博客迁移</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份原文件"><span class="nav-text">备份原文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建分支"><span class="nav-text">创建分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo生成文章目录-该方法仅支持默认主题"><span class="nav-text">hexo生成文章目录-该方法仅支持默认主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改Landscape主题的ejs文件"><span class="nav-text">修改Landscape主题的ejs文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为目录编写CSS文件"><span class="nav-text">为目录编写CSS文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收尾工作"><span class="nav-text">收尾工作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Hexo建立个人博客站点"><span class="nav-text">通过Hexo建立个人博客站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Hexo？"><span class="nav-text">什么是 Hexo？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前提"><span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-git基础安装"><span class="nav-text">1.git基础安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装-Node-js"><span class="nav-text">2.安装 Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#踩坑！！"><span class="nav-text">踩坑！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-部署Hexo"><span class="nav-text">3.部署Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-列举几个常用配置"><span class="nav-text">4.列举几个常用配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#坑！！注意！！！"><span class="nav-text">坑！！注意！！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-启动Hexo"><span class="nav-text">5.启动Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！"><span class="nav-text">好了，花里胡哨的东西讲完了，我们的网页还是在本地跑，这可太low了！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）"><span class="nav-text">我们可以把搭建的Hexo关联Git（GitHub与Gitlab都可以，此处只列举如何关联GitHub）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建仓库"><span class="nav-text">创建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布新文章"><span class="nav-text">发布新文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客"><span class="nav-text">可是没有图片的博客也太过于枯燥了，我们需要修改一下配置才可以发布带有图片的博客</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于md文件插入本地图片在GitHub-Pages无法显示的问题说明"><span class="nav-text">关于md文件插入本地图片在GitHub Pages无法显示的问题说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo博客迁移"><span class="nav-text">hexo博客迁移</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份原文件"><span class="nav-text">备份原文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建分支"><span class="nav-text">创建分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo生成文章目录-该方法仅支持默认主题"><span class="nav-text">hexo生成文章目录-该方法仅支持默认主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改Landscape主题的ejs文件"><span class="nav-text">修改Landscape主题的ejs文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为目录编写CSS文件"><span class="nav-text">为目录编写CSS文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收尾工作"><span class="nav-text">收尾工作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入文章置顶功能"><span class="nav-text">加入文章置顶功能</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -538,7 +545,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux笔记</title>
+    <title>Linux学习笔记</title>
     <url>/2019/12/26/Linux%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h2><p>本篇博客用于记录在Linux学习过程中遇到的问题、常用的工具等。</p>
 <a id="more"></a>
@@ -77,6 +77,9 @@
 <p><strong>Foreign Address</strong>：外部地址: 端口　</p>
 <p><strong>State</strong>:　内部地址与外部地址的连接状态 </p>
 ]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>LeetCode</title>
@@ -906,6 +909,12 @@
 <p>再次生成页面，应该已经可以显示比较美观的目录了。</p>
 <h4 id="收尾工作"><a href="#收尾工作" class="headerlink" title="收尾工作"></a>收尾工作</h4><p>通常情况下我们不需要为每一篇文章都添加目录，因为大部分文章的长度还是相对较短，或者结构简单而没有添加小标题。在我的博客上，需要添加目录的长文还是相对较少的。因为我选择了默认不生成目录，而手动为需要目录的文章添加显式地标记。</p>
 <p>下面我就需要编辑每一篇需要添加目录的文章，在文章开头的front-matter中加入<code>toc: true</code>。</p>
+<h3 id="加入文章置顶功能"><a href="#加入文章置顶功能" class="headerlink" title="加入文章置顶功能"></a>加入文章置顶功能</h3><p>目前已经有修改后支持置顶的仓库，可以直接用以下命令安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall hexo-generator-index --save</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-generator-index-pin-top --save</span></span><br></pre></td></tr></table></figure>
+<p>然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo</span><br><span class="line">date: 2019-10-22 15:02:19</span><br><span class="line">tags: 实践</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><strong>设置置顶标志</strong><br>打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：</div></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>实践</tag>
