@@ -1,3 +1,10 @@
+---
+title: Linux学习笔记
+date: 2019-12-26 10:10:00
+tags: Linux
+toc: true
+---
+
 ## Linux笔记
 
 本篇博客用于记录在Linux学习过程中遇到的问题、常用的工具等。

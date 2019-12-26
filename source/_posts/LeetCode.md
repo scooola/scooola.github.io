@@ -3,6 +3,7 @@ title: LeetCode
 date: 2019-11-06 09:50:19
 tags: LeetCode
 toc: true
+top: true
 ---
 ## LeetCode
 

@@ -363,3 +363,30 @@ npm remove hexo-toc --save
 通常情况下我们不需要为每一篇文章都添加目录，因为大部分文章的长度还是相对较短，或者结构简单而没有添加小标题。在我的博客上，需要添加目录的长文还是相对较少的。因为我选择了默认不生成目录，而手动为需要目录的文章添加显式地标记。
 
 下面我就需要编辑每一篇需要添加目录的文章，在文章开头的front-matter中加入`toc: true`。
+
+### 加入文章置顶功能
+
+目前已经有修改后支持置顶的仓库，可以直接用以下命令安装。
+
+```shell
+$ npm uninstall hexo-generator-index --save
+$ npm install hexo-generator-index-pin-top --save
+```
+然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：
+```
+---
+title: hexo
+date: 2019-10-22 15:02:19
+tags: 实践
+top: true
+---
+```
+**设置置顶标志**
+打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：
+```
+{% if post.top %}
+  <i class="fa fa-thumb-tack"></i>
+  <font color=7D26CD>置顶</font>
+  <span class="post-meta-divider">|</span>
+{% endif %}
+```
