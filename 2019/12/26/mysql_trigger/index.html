@@ -51,15 +51,15 @@
   };
 </script>
 
-  <meta name="description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。 创建触发器的语法123456789101112CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;-">
+  <meta name="description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL触发器">
 <meta property="og:url" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;12&#x2F;26&#x2F;mysql_trigger&#x2F;index.html">
 <meta property="og:site_name" content="scola的博客">
-<meta property="og:description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。 创建触发器的语法123456789101112CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;-">
+<meta property="og:description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-17T03:55:27.091Z">
+<meta property="og:updated_time" content="2020-07-17T04:00:49.161Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://scooola.github.io/2019/12/26/mysql_trigger/">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-17 11:55:27" itemprop="dateModified" datetime="2020-07-17T11:55:27+08:00">2020-07-17</time>
+                <time title="Modified: 2020-07-17 12:00:49" itemprop="dateModified" datetime="2020-07-17T12:00:49+08:00">2020-07-17</time>
               </span>
 
           
@@ -269,6 +269,8 @@
 
       
         <h1 id="Mysql触发器"><a href="#Mysql触发器" class="headerlink" title="Mysql触发器"></a>Mysql触发器</h1><h3 id="什么是触发器"><a href="#什么是触发器" class="headerlink" title="什么是触发器"></a>什么是触发器</h3><p>触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。</p>
+<a id="more"></a>
+
 <h3 id="创建触发器的语法"><a href="#创建触发器的语法" class="headerlink" title="创建触发器的语法"></a>创建触发器的语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;</span><br><span class="line"></span><br><span class="line">-- 字段解析</span><br><span class="line">trigger_name：触发器的名称</span><br><span class="line">tirgger_time：触发时机，为BEFORE或者AFTER</span><br><span class="line">trigger_event：触发事件，为INSERT、DELETE或者UPDATE</span><br><span class="line">tb_name：表示建立触发器的表明，就是在哪张表上建立触发器</span><br><span class="line">trigger_stmt：触发器的程序体，可以是一条SQL语句或者是用BEGIN和END包含的多条语句</span><br><span class="line"></span><br><span class="line">所以可以说MySQL创建以下六种触发器：</span><br><span class="line">BEFORE INSERT,BEFORE DELETE,BEFORE UPDATE</span><br><span class="line">AFTER INSERT,AFTER DELETE,AFTER UPDATE</span><br></pre></td></tr></table></figure>
 
 <p><strong>创建有多个执行语句的触发器</strong></p>
