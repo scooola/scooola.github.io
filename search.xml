@@ -30,7 +30,7 @@
 <td align="left">INSERT, LOAD DATA, REPLACE</td>
 </tr>
 <tr>
-<td align="left">Y</td>
+<td align="left">UPDATE型触发器</td>
 <td align="left">UPDATE</td>
 </tr>
 <tr>
