@@ -2,7 +2,7 @@
 title: MySQL触发器
 date: 2020-07-17 13:57:00
 tags: MySQL 
-toc: false
+toc: true
 ---
 
 
@@ -66,7 +66,7 @@ Query OK, 0 rows affected (0.06 sec)
 | 触发器类型     | 激活触发器的语句           |
 | :------------- | :------------------------- |
 | INSERT型触发器 | INSERT, LOAD DATA, REPLACE |
-| Y              | UPDATE                     |
+| UPDATE型触发器 | UPDATE                     |
 | DELETE型触发器 | DELETE, REPLACE            |
 
 **NEW和OLD的使用**
