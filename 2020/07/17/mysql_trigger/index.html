@@ -51,20 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="别在这种地方摸鱼，快去拯救世界吧！">
-<meta name="keywords" content="乱七八糟">
+  <meta name="description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随手记">
-<meta property="og:url" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;12&#x2F;26&#x2F;chaos&#x2F;index.html">
+<meta property="og:title" content="MySQL触发器">
+<meta property="og:url" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2020&#x2F;07&#x2F;17&#x2F;mysql_trigger&#x2F;index.html">
 <meta property="og:site_name" content="scola的博客">
-<meta property="og:description" content="别在这种地方摸鱼，快去拯救世界吧！">
+<meta property="og:description" content="Mysql触发器什么是触发器触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;12&#x2F;26&#x2F;chaos&#x2F;five.jpg">
-<meta property="og:updated_time" content="2019-12-27T04:49:19.169Z">
+<meta property="og:updated_time" content="2020-07-17T05:32:05.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;scooola.github.io&#x2F;2019&#x2F;12&#x2F;26&#x2F;chaos&#x2F;five.jpg">
 
-<link rel="canonical" href="https://scooola.github.io/2019/12/26/chaos/">
+<link rel="canonical" href="https://scooola.github.io/2020/07/17/mysql_trigger/">
 
 
 <script id="page-configurations">
@@ -78,7 +76,7 @@
   };
 </script>
 
-  <title>随手记 | scola的博客</title>
+  <title>MySQL触发器 | scola的博客</title>
   
 
 
@@ -204,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://scooola.github.io/2019/12/26/chaos/">
+    <link itemprop="mainEntityOfPage" href="https://scooola.github.io/2020/07/17/mysql_trigger/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/xiamu.jpg">
@@ -217,33 +215,23 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          随手记
+          MySQL触发器
         </h1>
 
         <div class="post-meta">
 	  
-	    <i class="fa fa-thumb-tack"></i>
-	    <font color=7D26CD>置顶</font>
-	    <span class="post-meta-divider">|</span>
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2019-12-26 20:58:25" itemprop="dateCreated datePublished" datetime="2019-12-26T20:58:25+08:00">2019-12-26</time>
+              <time title="Created: 2020-07-17 13:32:00 / Modified: 13:32:05" itemprop="dateCreated datePublished" datetime="2020-07-17T13:32:00+08:00">2020-07-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-27 12:49:19" itemprop="dateModified" datetime="2019-12-27T12:49:19+08:00">2019-12-27</time>
-              </span>
 
           
-            <span id="/2019/12/26/chaos/" class="post-meta-item leancloud_visitors" data-flag-title="随手记" title="Views">
+            <span id="/2020/07/17/mysql_trigger/" class="post-meta-item leancloud_visitors" data-flag-title="MySQL触发器" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -258,8 +246,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/12/26/chaos/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/26/chaos/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/17/mysql_trigger/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/mysql_trigger/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,9 +262,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>别在这种地方摸鱼，快去拯救世界吧！</p>
-<p><img src="/2019/12/26/chaos/five.jpg" alt></p>
+        <h1 id="Mysql触发器"><a href="#Mysql触发器" class="headerlink" title="Mysql触发器"></a>Mysql触发器</h1><h3 id="什么是触发器"><a href="#什么是触发器" class="headerlink" title="什么是触发器"></a>什么是触发器</h3><p>触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。</p>
 <a id="more"></a>
+
+<h3 id="创建触发器的语法"><a href="#创建触发器的语法" class="headerlink" title="创建触发器的语法"></a>创建触发器的语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;</span><br><span class="line"></span><br><span class="line">-- 字段解析</span><br><span class="line">trigger_name：触发器的名称</span><br><span class="line">tirgger_time：触发时机，为BEFORE或者AFTER</span><br><span class="line">trigger_event：触发事件，为INSERT、DELETE或者UPDATE</span><br><span class="line">tb_name：表示建立触发器的表明，就是在哪张表上建立触发器</span><br><span class="line">trigger_stmt：触发器的程序体，可以是一条SQL语句或者是用BEGIN和END包含的多条语句</span><br><span class="line"></span><br><span class="line">所以可以说MySQL创建以下六种触发器：</span><br><span class="line">BEFORE INSERT,BEFORE DELETE,BEFORE UPDATE</span><br><span class="line">AFTER INSERT,AFTER DELETE,AFTER UPDATE</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建有多个执行语句的触发器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER 触发器名 BEFORE|AFTER 触发事件</span><br><span class="line">ON 表名 FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">    执行语句列表</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>其中，BEGIN与END之间的执行语句列表参数表示需要执行的多个语句，不同语句用分号隔开</p>
+<p><strong>tips：</strong>一般情况下，mysql默认是以 ; 作为结束执行语句，与触发器中需要的分行起冲突</p>
+<p>　　  为解决此问题可用DELIMITER，如：DELIMITER ||，可以将结束符号变成||</p>
+<p>　　  当触发器创建完成后，可以用DELIMITER ;来将结束符号变成;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DELIMITER ||</span><br><span class="line">mysql&gt; CREATE TRIGGER demo BEFORE DELETE</span><br><span class="line">    -&gt; ON users FOR EACH ROW</span><br><span class="line">    -&gt; BEGIN</span><br><span class="line">    -&gt; INSERT INTO logs VALUES(NOW());</span><br><span class="line">    -&gt; INSERT INTO logs VALUES(NOW());</span><br><span class="line">    -&gt; END</span><br><span class="line">    -&gt; ||</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br></pre></td></tr></table></figure>
+
+<p><strong>触发器类型</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">触发器类型</th>
+<th align="left">激活触发器的语句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">INSERT型触发器</td>
+<td align="left">INSERT, LOAD DATA, REPLACE</td>
+</tr>
+<tr>
+<td align="left">Y</td>
+<td align="left">UPDATE</td>
+</tr>
+<tr>
+<td align="left">DELETE型触发器</td>
+<td align="left">DELETE, REPLACE</td>
+</tr>
+</tbody></table>
+<p><strong>NEW和OLD的使用</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">触发器类型</th>
+<th align="left">激活触发器的语句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">INSERT型触发器</td>
+<td align="left">NEW表示将要或者已经新增的数据</td>
+</tr>
+<tr>
+<td align="left">UPDATE型触发器</td>
+<td align="left">OLD用来表示将要或者已经被删除的语句，NEW表示将要或者已经修改的数据</td>
+</tr>
+<tr>
+<td align="left">DELETE型触发器</td>
+<td align="left">OLD表示将要或者已经被删除的数据</td>
+</tr>
+</tbody></table>
+<h3 id="触发器的应用举例"><a href="#触发器的应用举例" class="headerlink" title="触发器的应用举例"></a>触发器的应用举例</h3><p>例如需要存储大量的URL，并需要根据URL进行搜索查找。如果使用B-Tree来存储URL，存储的内容就会很大，因为URL本身都很长。而且对完整的URL字符串做索引会非常慢。正常情况下会有如下查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM url WHERE url=&quot;https://scooola.github.io&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>若删除原来URL列上的索引，而新增一个被索引的url_crc列，使用CRC32做哈希，就可以使用下面的方式查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM url WHERE url=&quot;https://scooola.github.io&quot; AND url_cc=CRC32(&quot;https://scooola.github.io&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>这样做的性能会非常高，因为MySQL优化器会使用这个选择性很高而体积很小的基于url_crc列的索引来完成查找。</p>
+<p>这样实现的缺陷是需要维护哈希值。可以手动维护，也可以使用触发器实现。首先创建如下表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE pseudohash (</span><br><span class="line">    -&gt; id int NOT NULL auto_increment,</span><br><span class="line">    -&gt; url varchar(255) NOT NULL,</span><br><span class="line">    -&gt; url_crc int NOT NULL DEFAULT 0,</span><br><span class="line">    -&gt; PRIMARY KEY(id)</span><br><span class="line">    -&gt; );</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建触发器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 新增数据触发器</span><br><span class="line">CREATE TRIGGER pseudohash_crc_ins INSERT UPDATE ON pseudohash FOR EACH ROW SET NEW.url_crc=crc32(NEW.url);</span><br><span class="line">-- 更新数据触发器</span><br><span class="line">CREATE TRIGGER pseudohash_crc_upd BEFORE UPDATE ON pseudohash FOR EACH ROW SET NEW.url_crc=crc32(NEW.url);</span><br></pre></td></tr></table></figure>
+
+<p>接下来验证一下触发器如何维护哈希索引：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 新增</span><br><span class="line">mysql&gt; INSERT INTO pseudohash (url) VALUES(&apos;https://scooola.github.io&apos;);</span><br><span class="line">mysql&gt; SELECT * FROM pseudohash;</span><br><span class="line">+----+---------------------------+----------+</span><br><span class="line">| id | url                       | url_crc  |</span><br><span class="line">+----+---------------------------+----------+</span><br><span class="line">|  1 | https://scooola.github.io | 47105892 |</span><br><span class="line">+----+---------------------------+----------+</span><br><span class="line"></span><br><span class="line">-- 更新</span><br><span class="line">mysql&gt; UPDATE pseudohash SET url=&apos;https://scooola.github.io/&apos; WHERE id=1;</span><br><span class="line">mysql&gt; SELECT * FROM pseudohash;</span><br><span class="line">+----+----------------------------+-----------+</span><br><span class="line">| id | url                        | url_crc   |</span><br><span class="line">+----+----------------------------+-----------+</span><br><span class="line">|  1 | https://scooola.github.io/ | 856602962 |</span><br><span class="line">+----+----------------------------+-----------+</span><br></pre></td></tr></table></figure>
+
+<p>如果数据表非常大，CRC32()会出现大量的哈希冲突，可以考虑自己实现一个简单的64位哈希函数。</p>
+<p>上述示例中，就用触发器来维护了哈希索引的生成，而避免的程序主动生成触发。</p>
 
     </div>
 
@@ -286,24 +345,21 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/" rel="tag"># 乱七八糟</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/12/26/Linux%E7%AC%94%E8%AE%B0/" rel="next" title="Linux学习笔记">
-                  <i class="fa fa-chevron-left"></i> Linux学习笔记
+                <a href="/2019/12/26/chaos/" rel="next" title="随手记">
+                  <i class="fa fa-chevron-left"></i> 随手记
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/07/17/mysql_trigger/" rel="prev" title="MySQL触发器">
-                  MySQL触发器 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -343,6 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mysql触发器"><span class="nav-text">Mysql触发器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是触发器"><span class="nav-text">什么是触发器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建触发器的语法"><span class="nav-text">创建触发器的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发器的应用举例"><span class="nav-text">触发器的应用举例</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
